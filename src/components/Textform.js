@@ -151,7 +151,7 @@ export default function Textform(props) {
                 <h2 className='heading'>Your Text Summary</h2>
                 <p>{Text === '' ? '0' : Text.split(" ").length} words and {Text.length} characters</p>
                 <h2 className="heading">Preview</h2>
-                <p>{Text}</p>
+                <p>{Text.length>0?Text:"Enter something in the textbox above to display it here"}</p>
             </div>
         </>
     )
