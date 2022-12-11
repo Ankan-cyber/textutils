@@ -1,9 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
-import About from './components/About'
 import Textform from './components/Textform'
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
 
@@ -35,13 +33,8 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar title="TextUtils" aboutText="About" theme={theme} toggleTheme={toggleTheme} />
-        <Routes>
-          <Route excact path='/' element={<Textform heading="Enter Text To Analyze Below" theme={theme} />}></Route>
-          <Route exact path='/about' element={<About />}></Route>
-        </Routes>
-      </Router>
+      <Navbar title="TextUtils" aboutText="About" theme={theme} toggleTheme={toggleTheme} />
+      <Textform heading="Enter Text To Analyze Below" theme={theme} />
     </>
   );
 }
