@@ -10,17 +10,19 @@ TextUtils is a simple and user-friendly text manipulation tool built with [React
 
 ## Installation
 ```bash
-git clone https://github.com/yourusername/textutils.git
+git clone https://github.com/Ankan-cyber/textutils.git
 cd textutils
 npm install
-
+```
 ## Usage
 Start the development server:
 
-```
+```bash
 npm start
 ```
+
 Build for production:
+
 ```
 npm run build
 ```
