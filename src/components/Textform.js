@@ -7,7 +7,7 @@ import './Navbar.css'
 export default function Textform(props) {
     document.body.style.backgroundColor = props.theme === 'dark' ? '#212529' : 'white';
     document.body.style.color = props.theme === 'dark' ? 'white' : 'black';
-    let startUpText;
+    let startUpText, toastifyTheme = props.theme === 'dark' ? 'dark':'light';
     if (localStorage.getItem("Text") == null) {
         startUpText = "";
     }
@@ -26,7 +26,7 @@ export default function Textform(props) {
 
         setText(Text.toUpperCase());
         toast.success('Succesfully converted to Uppercase', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
 
@@ -34,7 +34,7 @@ export default function Textform(props) {
     function toLowerCase() {
         setText(Text.toLowerCase());
         toast.success('Succesfully converted to Lowercase', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
 
@@ -44,7 +44,7 @@ export default function Textform(props) {
         newText = newText.join(" ");
         setText(newText);
         toast.success('Succesfully Remove Extra Spaces', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
 
@@ -56,7 +56,7 @@ export default function Textform(props) {
         let newText = toProperCase(Text);
         setText(newText);
         toast.success('Succesfully converted to Titlecase', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
 
@@ -64,14 +64,14 @@ export default function Textform(props) {
     function copyToClipboard() {
         navigator.clipboard.writeText(Text).then(() => {
             toast.success('Succesfully copied to clipboard', {
-                theme: 'light',
+                theme: toastifyTheme,
                 autoClose: 3000
             });
         })
             .catch(() => {
                 toast.error("Copy Failed", {
                     autoClose: 3000,
-                    theme: "light",
+                    theme: toastifyTheme,
                 });
             })
 
@@ -79,7 +79,7 @@ export default function Textform(props) {
     function saveText() {
         localStorage.setItem("Text", Text);
         toast.success('Succesfully saved your text', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
 
@@ -88,7 +88,7 @@ export default function Textform(props) {
         setText("")
         localStorage.removeItem("Text")
         toast.success('Succesfully clear your text', {
-            theme: 'light',
+            theme: toastifyTheme,
             autoClose: 3000
         });
     }
